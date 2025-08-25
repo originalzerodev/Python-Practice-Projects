@@ -14,7 +14,7 @@ print(f"The time for the task is {time_limit} minutes")
 
 try:
     for minutes in range(time_limit,0,-1):
-        print(f"The remaining time is {minutes} minutes     ") 
+        print(f"The remaining time is {minutes - 1} minutes     ") 
         for seconds in range(59,-1,-1):
             print(f"                      {seconds} seconds    ", end="\r")
             time.sleep(1)
