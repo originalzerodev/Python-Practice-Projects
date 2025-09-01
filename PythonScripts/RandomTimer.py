@@ -28,7 +28,7 @@ def ending():
 
 intro()
 try:
-    chosen_time = min_max() # use this if think u gonna need chosen_time later if not use 
+    chosen_time = min_max() # use this if think u gonna need chosen_time later if not use countdown(min_max()).
     # this make the min_max() called and chosen_time make reusable at the same time
     countdown(chosen_time) # countdown(min_max()) #this make it use only here
     ending()
