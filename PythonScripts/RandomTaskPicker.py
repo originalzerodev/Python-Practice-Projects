@@ -1,40 +1,27 @@
-#RANDOM TASK PICKER
 import random,os,time
 os.system('cls')
 try:
-    task_num = int(input("How many task do u want to enter?: "))
+    while True:
+        task_num = input("How many task do u want to enter?: ")
+        try:
+            task_num = int(task_num)
+            if task_num > 1:
+                break
+            else:
+                print("The no. of task can't be less than 2")
+        except ValueError:
+            print("Invalid input by the User\nThe User must input an integer")
     task = []
     for i in range(task_num):
-        time.sleep(1)
         t = input(f"Task ({i+1}): ")
         task.append(t)
-    while True:
-        def third_random_task():
-            Third_task = [random.choice(task) for _ in range(3)]
-            return Third_task[2]
-        time.sleep(1)
-        print("The Third random task is ", third_random_task())
-        time.sleep(1)
-        another = input("Do u want another draw?(Y/N): ").strip().lower()
-        if another == "n":
-            time.sleep(1)
-            print("EXITING.......")
-            time.sleep(1)
-            break
-        elif another == "y":
-            time.sleep(1)
-            print("Re-Drawing.......")
-            time.sleep(1)
-            continue
-        else:
-            time.sleep(1)
-            print("User Input Not Valid!!")
-            time.sleep(1)
-            print("EXITING..............")
-            time.sleep(1)
-            break
+    def get_task():
+        return random.choice(task)
+    print("THE FINAL RESULT WILL BE THE RESULT OF THE THIRD DRAW")
+    draw_num = 0
+    while draw_num != 3:
+        time.sleep(5) 
+        print(f"The random task ({draw_num + 1}): ", get_task())
+        draw_num += 1
 except KeyboardInterrupt:
-    time.sleep(1)
-    print("\nInterrupted by the User!")
-    time.sleep(1)
-    print("EXITING................")
+    print("\nInterrupted by User")
