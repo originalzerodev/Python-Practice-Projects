@@ -1,5 +1,6 @@
-import random,os,time
+import random,os,time,sys
 os.system('cls')
+
 try:
     while True:
         task_num = input("How many task do u want to enter?: ")
@@ -21,7 +22,14 @@ try:
     draw_num = 0
     while draw_num != 3:
         time.sleep(5) 
-        print(f"The random task ({draw_num + 1}): ", get_task())
+        if draw_num != 2:
+            print(f"The random task ({draw_num + 1}): ", get_task())
+        else:
+            print("SHUFFLING......")
+            for i in range(3,0,-1):
+                print(i)
+                time.sleep(1)
+            print(f"THE FINAL RESULT ({draw_num+1}): ", get_task() , "!\n")
         draw_num += 1
 except KeyboardInterrupt:
-    print("\nInterrupted by User")
+    print("\nInterrupted by User\n")
